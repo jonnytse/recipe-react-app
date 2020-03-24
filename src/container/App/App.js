@@ -50,7 +50,8 @@ class App extends Component {
     console.log(recipeName);
 
     const data = await exampleRequest.json();
-    // console.log(data.hits);
+    console.log(data);
+    console.log(data.hits);
     // console.log(data.hits[0].recipe.label);
     this.setState({ recipes: data.hits });
     console.log(this.state.recipes);
@@ -64,7 +65,12 @@ class App extends Component {
         <Searchbar 
           grabRecipe={this.grabRecipe}/>
           {this.state.recipes.map((recipe) => {
-          return <p key={recipe.recipe.url}>{ recipe.recipe.label }</p>
+            return (
+              <div>
+                <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+                <p key={recipe.recipe.url}>{ recipe.recipe.label }</p>
+              </div>  
+            )
           })}
       </div>
     );
