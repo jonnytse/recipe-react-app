@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.module.scss';
 import Header from '../../components/Header';
 // import Navbar from '../../components/Navbar';
-// import TurnerList from '../../components/TurnerList';
+import Searchbar from '../../components/Searchbar';
 
 class App extends Component {
   render () {
@@ -10,7 +10,7 @@ class App extends Component {
       <div className={styles.App}>
         <Header />
         {/* <Navbar /> */}
-        {/* <TurnerList /> */}
+        <Searchbar />
       </div>
     );
   }
