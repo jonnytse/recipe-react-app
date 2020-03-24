@@ -5,7 +5,7 @@ class Searchbar extends Component {
     render() {
         return (
             <div className={styles.searchbar}>
-                <form>
+                <form onSubmit={this.props.grabRecipe}>
                     <input type="text"/>
                     <button>Search</button>
                 </form>
