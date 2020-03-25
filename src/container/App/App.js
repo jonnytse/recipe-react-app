@@ -32,8 +32,8 @@
 import React, { Component } from 'react';
 import styles from './App.module.scss';
 import Header from '../../components/Header';
-// import Navbar from '../../components/Navbar';
 import Searchbar from '../../components/Searchbar';
+import RecipesList from '../../components/RecipesList';
 
 const APP_ID = '77fb557f';
 const APP_KEY = "143f9aa7bc82dcdc94f52953fe0ce3d1";
@@ -61,23 +61,15 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <Header />
-        {/* <Navbar /> */}
-        <Searchbar 
-          grabRecipe={this.grabRecipe}/>
-          {this.state.recipes.map((recipe) => {
-            return (
-              <div>
-                <img src={recipe.recipe.image} alt={recipe.recipe.label} />
-                <p key={recipe.recipe.url}>{ recipe.recipe.label }</p>
-              </div>  
-            )
-          })}
+        <Searchbar grabRecipe={this.grabRecipe}/>
+        <RecipesList recipes={this.state.recipes} /> 
       </div>
     );
   }
 }
 
 export default App;
+
 
 
 
