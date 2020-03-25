@@ -3,3 +3,23 @@
     flex-wrap: wrap;
     justify-content:space-evenly;
 }
+
+.recipeCard {
+    border: 2px solid darkgrey;
+    margin: 20px;
+    border-radius: 20px; 
+}
+
+.imgBorder {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.viewRecipe {
+    margin-bottom: 15px;
+}
+
+p {
+    font-weight: 700;
+    color: crimson;
+}

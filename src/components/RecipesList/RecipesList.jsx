@@ -5,12 +5,15 @@ class RecipesList extends Component {
     render() {
         return (
            <div className={styles.recipelist}>
-            {this.props.recipes.map((recipe) => {
+            {this.props.recipes.map((reCipe) => {
                 return (
-                    <div key={recipe.recipe.url}>
-                        <img src={recipe.recipe.image} alt={recipe.recipe.label} />
-                        <p>{ recipe.recipe.label }</p>
-                    </div>  
+                    <div className={styles.recipeCard}>
+                        <div key={reCipe.recipe.url}>
+                            <img className ={styles.imgBorder} src={reCipe.recipe.image} alt={reCipe.recipe.label} />
+                            <p>{ reCipe.recipe.label }</p>
+                        </div>  
+                        <button className={styles.viewRecipe}>Click for Recipe</button>
+                    </div>
                 );
             })}
            </div>
