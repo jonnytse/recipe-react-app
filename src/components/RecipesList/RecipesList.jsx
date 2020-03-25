@@ -10,7 +10,7 @@ class RecipesList extends Component {
                     <div className={styles.recipeCard}>
                         <div key={reCipe.recipe.url}>
                             <img className ={styles.imgBorder} src={reCipe.recipe.image} alt={reCipe.recipe.label} />
-                            <p>{ reCipe.recipe.label }</p>
+                            <p>{ reCipe.recipe.label.length < 25 ? `${reCipe.recipe.label}` : `${reCipe.recipe.label.substring(0, 30)} ...` }</p>
                         </div>  
                         <button className={styles.viewRecipe}>Click for Recipe</button>
                     </div>
