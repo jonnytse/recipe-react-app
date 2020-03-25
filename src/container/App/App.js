@@ -31,6 +31,7 @@
 
 import React, { Component } from 'react';
 import styles from './App.module.scss';
+import Routes from '../../routes/Routes';
 import Header from '../../components/Header';
 import Searchbar from '../../components/Searchbar';
 import RecipesList from '../../components/RecipesList';
@@ -62,6 +63,7 @@ class App extends Component {
         <Header />
         <Searchbar grabRecipe={this.grabRecipe}/>
         <RecipesList recipes={this.state.recipes} /> 
+        <Routes />
       </div>
     );
   }
