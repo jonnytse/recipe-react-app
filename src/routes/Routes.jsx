@@ -12,7 +12,7 @@ class Routes extends Component {
             <Router>
                 <Redirect noThrow from="/" to="/" />
                 <App path="/" exact />
-                <Recipe path="/recipe" />
+                <Recipe path="/recipe/:calories" />
                 <PageNotFound default />
             </Router>
         );
