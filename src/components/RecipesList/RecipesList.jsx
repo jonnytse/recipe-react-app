@@ -16,7 +16,8 @@ class RecipesList extends Component {
                             <p>{ recipe.label.length < 25 ? `${recipe.label}` : `${recipe.label.substring(0, 30)} ...` }</p>
                         </div>  
                         <button className={styles.viewRecipe}>
-                            <Link to={`recipe/${recipeId}`} state={{ recipe }}>
+                            <Link to={`recipe/${recipeId}`} 
+                                state={{ recipe }}>
                                 Click for recipe!
                             </Link>
                         </button>
