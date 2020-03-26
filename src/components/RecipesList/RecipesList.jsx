@@ -1,18 +1,25 @@
 import React, { Component } from "react";
 import styles from "./RecipesList.module.scss";
+import { Link } from "@reach/router";
 
 class RecipesList extends Component {
     render() {
         return (
            <div className={styles.recipelist}>
-            {this.props.recipes.map((reCipe) => {
+            {this.props.recipes.map(({recipe}) => {
+                const recipeId = recipe.uri.split("_")[1];
+
                 return (
                     <div className={styles.recipeCard}>
-                        <div key={reCipe.recipe.url}>
-                            <img className ={styles.imgBorder} src={reCipe.recipe.image} alt={reCipe.recipe.label} />
-                            <p>{ reCipe.recipe.label.length < 25 ? `${reCipe.recipe.label}` : `${reCipe.recipe.label.substring(0, 30)} ...` }</p>
+                        <div key={recipe.url}>
+                            <img className ={styles.imgBorder} src={recipe.image} alt={recipe.label} />
+                            <p>{ recipe.label.length < 25 ? `${recipe.label}` : `${recipe.label.substring(0, 30)} ...` }</p>
                         </div>  
-                        <button className={styles.viewRecipe}>Click for Recipe</button>
+                        <button className={styles.viewRecipe}>
+                            <Link to={`recipe/${recipeId}`} state={{ recipe }}>
+                                Click for recipe!
+                            </Link>
+                        </button>
                     </div>
                 );
             })}

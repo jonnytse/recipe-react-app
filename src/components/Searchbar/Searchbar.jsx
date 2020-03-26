@@ -6,7 +6,7 @@ class Searchbar extends Component {
         return (
             <div className={styles.searchbar}>
                 <form onSubmit={this.props.grabRecipe}>
-                    <input type="text" name="recipeName" />
+                    <input type="text" name="recipeName" placeholder="e.g. Chicken" />
                     <button>Search</button>
                 </form>
             </div>
