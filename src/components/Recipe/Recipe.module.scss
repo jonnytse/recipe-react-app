@@ -6,4 +6,15 @@
 .requestedImageStyling {
     margin-top: 20px;
     border-radius: 20px;
+    border: solid 2px black;
+    text-decoration: none;
+}
+
+.homeButtonStyle {
+    border: 1px solid crimson;
+    height: 25px;
+    width: 90px;
+    border-radius: 3px;
+    background-color: crimson;
+    margin-bottom: 20px;
 }

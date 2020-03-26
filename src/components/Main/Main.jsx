@@ -13,7 +13,7 @@ class Main extends Component {
     grabRecipe = async (event) => {
         const recipeName = event.target.elements.recipeName.value;
         event.preventDefault();
-        const exampleRequest = await fetch(`https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=10&calories=591-722&health=alcohol-free`); 
+        const exampleRequest = await fetch(`https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=51&calories=591-722&health=alcohol-free`); 
         console.log(recipeName);
         const data = await exampleRequest.json();
         console.log(data);

@@ -17,8 +17,9 @@ class RecipesList extends Component {
                         </div>  
                         <button className={styles.viewRecipe}>
                             <Link to={`recipe/${recipeId}`} 
-                                state={{ recipe }}>
-                                Click for recipe!
+                                state={{ recipe }} 
+                                style={{color: '#dc143c'}}>
+                                View recipe
                             </Link>
                         </button>
                     </div>

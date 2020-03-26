@@ -5,21 +5,27 @@
 }
 
 .recipeCard {
-    border: 2px solid darkgrey;
+    border: 2px solid black;
     margin: 20px;
-    border-radius: 20px; 
+    border-radius: 10px; 
+    background-color: white;
 }
 
 .imgBorder {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
 }
 
 .viewRecipe {
     margin-bottom: 15px;
+    border-radius: 3px;
+    border: 1px solid crimson;
+    height: 25px;
+    width: 90px;
+    background-color: white;
 }
 
 p {
     font-weight: 700;
-    color: crimson;
+    color: black;
 }
