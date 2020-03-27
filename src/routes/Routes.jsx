@@ -20,6 +20,7 @@ class Routes extends Component {
             .signInWithPopup(providers.google)
             .then(result => {
                 this.setState({user: result.user})
+                console.log(this.state.user.displayName + ' has logged in');
             })
             .catch(error => {
                 console.log(error);
@@ -32,6 +33,7 @@ class Routes extends Component {
             .signOut()
             .then(() => {
                 this.setState({user: null});
+                console.log(this.state.user);
                 globalHistory.navigate("/login");
             })
     }
