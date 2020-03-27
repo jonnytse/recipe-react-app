@@ -36,8 +36,13 @@ class Recipe extends React.Component {
            <div className="container">
                <div>
                     <img className={styles.requestedImageStyling} src={requestImage} alt="foodPhotograph"/>
-                    <p>{label}</p>
+                    {/* <p>{label}</p> */}
                     <p><span><a href={website}>{website}</a></span> </p>
+                    <div>
+                        <button className={styles.addToFaveStyling}>
+                            Add to Favourite
+                        </button>
+                    </div> 
                </div>
            </div>
         );

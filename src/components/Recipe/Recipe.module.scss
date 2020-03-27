@@ -5,11 +5,17 @@
 
 .requestedImageStyling {
     margin-top: 20px;
+    margin-bottom: 10px;
     border-radius: 20px;
     border: solid 2px black;
     // height: 300px
 }
 
-p {
-   margin: 5px;
+
+.addToFaveStyling {
+    background-color: crimson;
+    color: white;
+    height: 25px;
+    width: 130px;
+    margin: 28px;
 }
