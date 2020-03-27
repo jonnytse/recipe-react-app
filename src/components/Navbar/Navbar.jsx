@@ -9,7 +9,7 @@ class Navbar extends Component {
                 <ul className={styles.navList}>
                     <NavItem route="/" name="Home" />
                     <NavItem route="/login" name="Login" />
-                    <NavItem route="/private/favourites" name="Favourites List" />
+                    <NavItem route="/private/favourites" name="Favourite Recipes" />
                 </ul>
             </nav>
         )
