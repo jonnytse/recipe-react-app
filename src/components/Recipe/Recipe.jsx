@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Recipe.module.scss";
-import { Link } from "@reach/router";
 
 const APP_ID = '77fb557f';
 const APP_KEY = "143f9aa7bc82dcdc94f52953fe0ce3d1";
@@ -39,12 +38,6 @@ class Recipe extends React.Component {
                     <img className={styles.requestedImageStyling} src={requestImage} alt="foodPhotograph"/>
                     <p>{label}</p>
                     <p><span><a href={website}>{website}</a></span> </p>
-                    <button className={styles.homeButtonStyle}>
-                        <Link to="/" 
-                        style={{color: '#ffffff'}}>
-                           Go Home
-                        </Link>
-                    </button>
                </div>
            </div>
         );
