@@ -27,10 +27,11 @@ class Recipe extends React.Component {
     
     render() {
         // console.log(this.props);
-        // console.log(this.props.location);
-        const label = this.props.location.state.recipe.label;
-        const requestImage = this.props.location.state.recipe.image;
-        const website = this.props.location.state.recipe.url;
+        console.log(this.props.location.state);
+        const recipe = this.props.location.state.recipe;
+        const label = recipe.label;
+        const requestImage = recipe.image;
+        const website = recipe.url;
         
         return (
            <div className="container">
