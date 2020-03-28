@@ -39,7 +39,7 @@ class FavouriteList extends Component {
         return (
             <>  
             <div className="favouriteContainer">
-            
+                
                 <div onClick={this.props.signOut}>
                     <button className={styles.signoutButton}>
                         Sign out
