@@ -25,20 +25,28 @@ class FavouriteList extends Component {
     render() {
         return (
             <>  
-            <div className="favouriteContainer">
-                {this.state.recipes.map((favouriteRecipe) => {
-                    return (
-                        <div>
-                            <img src="{favourite.Recipe}" alt=""/>
-                            <p key={favouriteRecipe.url}>{favouriteRecipe.description}</p>
-                        </div>
-                    );
-                })}
                 <div onClick={this.props.signOut}>
                     <button className={styles.signoutButton}>
                         Sign out
                     </button>
                 </div>
+            <div className={styles.favouriteContainer}>
+                {this.state.recipes.map((favouriteRecipe) => {
+                    return (
+                        <div className={styles.favouriteRecipeCards}>
+                            <div key={favouriteRecipe.url}>
+                                <img className={styles.faveImageBorder} src={favouriteRecipe.picture} alt="foodPicture" />
+                                <p>{ favouriteRecipe.description.length < 25 ? `${favouriteRecipe.description}` : `${favouriteRecipe.description.substring(0,30)} ...` }</p>
+                                <p className={styles.urlStyling}><span>
+                                        {/* <a href={favouriteRecipe.url}>{favouriteRecipe.url}</a> */}
+                                        <a href={favouriteRecipe.url}>Click for recipe!</a>
+                                    </span>
+                                </p>
+                            </div>    
+                        </div>
+                    );
+                })}
+            
             </div>
             </>    
         );

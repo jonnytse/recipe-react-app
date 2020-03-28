@@ -5,3 +5,29 @@
     color: white;
     margin: 25px;
 }
+
+.favouriteContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+.favouriteRecipeCards {
+    border: 2px solid darkgrey;
+    margin: 20px;
+    border-radius: 10px; 
+    background-color: white;
+}
+
+.faveImageBorder {
+    border-radius: 9px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.urlStyling {
+    margin-bottom: 15px;
+}

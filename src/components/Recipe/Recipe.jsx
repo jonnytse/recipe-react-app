@@ -60,7 +60,7 @@ class Recipe extends React.Component {
         
         return (
            <div className="container">
-               <div>
+               <div key={website}>
                     <img className={styles.requestedImageStyling} src={requestImage} alt="foodPhotograph"/>
                     {/* <p>{label}</p> */}
                     <p><span><a href={website}>{website}</a></span> </p>
