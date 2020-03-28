@@ -25,9 +25,9 @@ class Recipe extends React.Component {
         firestore 
             .collection("fave_recipes")
             .add({
+                picture: this.props.location.state.recipe.image,
                 description: this.props.location.state.recipe.label,
-                picture: this.props.location.state.recipe.image
-               
+                url: this.props.location.state.recipe.url
             })
             .then(() => {
                 console.log("IT WORKED")
