@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Recipe.module.scss";
+import { firestore } from "../../firebase";
+import { globalHistory } from "@reach/router";
 
 const APP_ID = '77fb557f';
 const APP_KEY = "143f9aa7bc82dcdc94f52953fe0ce3d1";
@@ -7,6 +9,28 @@ const APP_KEY = "143f9aa7bc82dcdc94f52953fe0ce3d1";
 class Recipe extends React.Component {
     state = {
         clickedRecipe: []
+    }
+
+    state = {
+        picture: "",
+        description: "",
+    }
+
+    componentDidMount() {
+        if (!this.props.user) globalHistory.navigate("login");
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        firestore 
+            .collection("fave_recipes")
+            .add({
+                ...this.props.location.state,
+               
+            })
+            .then(() => {
+                console.log("IT WORKED")
+            })
     }
     componentDidMount = async () => {
         const label = this.props.location.state.recipe.label;
@@ -26,9 +50,9 @@ class Recipe extends React.Component {
     
     render() {
         // console.log(this.props);
-        console.log(this.props.location.state);
+        console.log(this.props.location.state.recipe.label);
         const recipe = this.props.location.state.recipe;
-        const label = recipe.label;
+        // const label = recipe.label;
         const requestImage = recipe.image;
         const website = recipe.url;
         
@@ -38,7 +62,7 @@ class Recipe extends React.Component {
                     <img className={styles.requestedImageStyling} src={requestImage} alt="foodPhotograph"/>
                     {/* <p>{label}</p> */}
                     <p><span><a href={website}>{website}</a></span> </p>
-                    <div>
+                    <div onClick={this.handleSubmit}>
                         <button className={styles.addToFaveStyling}>
                             Add to Favourite
                         </button>
@@ -50,3 +74,4 @@ class Recipe extends React.Component {
 };
 
 export default Recipe;
+

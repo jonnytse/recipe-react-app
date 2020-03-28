@@ -4,9 +4,6 @@ import styles from './FavouriteList.module.scss';
 
 
 class FavouriteList extends Component {
-    state = {
-        favouriteList: []
-    }
     
     render() {
         return (
