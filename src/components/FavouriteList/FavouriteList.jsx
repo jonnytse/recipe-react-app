@@ -8,30 +8,17 @@ class FavouriteList extends Component {
     state = {
         recipes: [],
     }
-    
-    // componentDidMount() {
-    //     firestore
-    //     .collection("fave_recipes")
-    //     .get()
-    //     .then((query) => {
-    //         const newRecipes = query.docs.map(doc => doc.data());
-    //         this.setState({
-    //             recipes: newRecipes,
-    //         });
-    //     })
-    // }
 
     componentDidMount() {
         firestore
         .collection('fave_recipes')
         .get()
         .then((query) => {
-            const newRecipes = query.docs.map(doc => doc.data());
-            console.log(newRecipes);  
+            const faveRecipes = query.docs.map(doc => doc.data()); 
             this.setState({
-                recipes: newRecipes,
+                recipes: faveRecipes,
             });
-            console.log(newRecipes[0].description);
+            console.log(this.state.recipes);
         })
     }
 
@@ -39,7 +26,14 @@ class FavouriteList extends Component {
         return (
             <>  
             <div className="favouriteContainer">
-                
+                {this.state.recipes.map((favouriteRecipe) => {
+                    return (
+                        <div>
+                            <img src="{favourite.Recipe}" alt=""/>
+                            <p key={favouriteRecipe.url}>{favouriteRecipe.description}</p>
+                        </div>
+                    );
+                })}
                 <div onClick={this.props.signOut}>
                     <button className={styles.signoutButton}>
                         Sign out

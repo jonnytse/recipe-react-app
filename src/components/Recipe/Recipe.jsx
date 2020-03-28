@@ -21,6 +21,7 @@ class Recipe extends React.Component {
     }
 
     handleSubmit = (event) => {
+        alert("Successfully added to favourites!")
         event.preventDefault();
         firestore 
             .collection("fave_recipes")
