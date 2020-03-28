@@ -28,16 +28,23 @@ class FavouriteList extends Component {
         .then((query) => {
             const newRecipes = query.docs.map(doc => doc.data());
             console.log(newRecipes);  
+            this.setState({
+                recipes: newRecipes,
+            });
+            console.log(newRecipes[0].description);
         })
     }
 
     render() {
         return (
             <>  
-            <div onClick={this.props.signOut}>
-                <button className={styles.signoutButton}>
-                    Sign out
-                </button>
+            <div className="favouriteContainer">
+            
+                <div onClick={this.props.signOut}>
+                    <button className={styles.signoutButton}>
+                        Sign out
+                    </button>
+                </div>
             </div>
             </>    
         );
