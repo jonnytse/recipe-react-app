@@ -14,7 +14,7 @@ class Main extends Component {
         const recipeName = event.target.elements.recipeName.value;
         event.preventDefault();
         const exampleRequest = await fetch(`https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=51&calories=591-722&health=alcohol-free`); 
-        console.log(recipeName);
+        console.log(recipeName); //this is the actual text typed into searchbar
         const data = await exampleRequest.json();
         console.log(data);
         // console.log(data.hits);
