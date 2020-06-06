@@ -10,8 +10,8 @@ class RecipesList extends Component {
                 const recipeId = recipe.uri.split("_")[1];
 
                 return (
-                    <div className={styles.recipeCard}>
-                        <div key={recipe.url}>
+                    <div className={styles.recipeCard} key={recipe.url}>
+                        <div >
                             <img className ={styles.imgBorder} src={recipe.image} alt={recipe.label} />
                             <p>{ recipe.label.length < 25 ? `${recipe.label}` : `${recipe.label.substring(0, 30)} ...` }</p>
                         </div>  
