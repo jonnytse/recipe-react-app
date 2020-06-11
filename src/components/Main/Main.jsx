@@ -16,8 +16,8 @@ class Main extends Component {
         const exampleRequest = await fetch(`https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=51&calories=591-722&health=alcohol-free`); 
         console.log(recipeName); //this is the actual text typed into searchbar
         const data = await exampleRequest.json();
-        // console.log(data); //this is the whole returned object from the API
-        // console.log(data.hits); //this is the array from the API 
+        console.log(data); //this is the whole returned object from the API
+        console.log(data.hits); //this is the array from the API 
         // console.log(data.hits[0].recipe.label);
         this.setState({ recipes: data.hits });
         console.log(this.state.recipes);
